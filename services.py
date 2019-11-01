@@ -22,9 +22,8 @@ SPACY_POS_MAPPING = {
 
 def getPOS(input_json):
     """
-    This service extracts one given part-of-speech from given text
-    :param input_json: a dictionary that contains the text to analyze and
-                       a tag that specifies which part-of-speech to look for (regular word, not the actual POS code)
+    SERVICE 1: Extracts one given part-of-speech from given text
+    :param input_json: a dictionary that contains the "text" to analyze and a "tag" that specifies which part-of-speech to look for (regular word or the actual POS code)
     :return: All the words in the text that match the part-of-speech to look for
     """
     blob, tag = None, None
@@ -40,11 +39,10 @@ def getPOS(input_json):
 
 def getSimilarity(input_json):
     """
-    This service gives the cosine similarity between any two given texts
-    NOTE: this service uses small spaCy model because of AWS EC2 RAM constraints, so results are different compared
-          compared to the larger models.
+    SERVICE 2: Gives the cosine similarity between any two given texts
+    Note: This service uses small spaCy model because of AWS EC2 RAM constraints, so results are different compared to the larger models.
     :param input_json: a dictionary that contains strings "text1" and "text2"
-    :return: THe cosine similarity of two given text strings
+    :return: The cosine similarity of two given text strings
     """
     s1, s2 = None, None
     try:

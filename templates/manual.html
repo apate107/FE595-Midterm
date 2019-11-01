@@ -5,6 +5,20 @@
     <title>User Guide</title>
 </head>
 <body>
-    TODO
+    <h1>Services</h1>
+
+    <ul>
+        {% for service, doc in doc.items() %}
+            <li><b>{{ service }}</b>
+                <ul>
+                    {% for line in doc %}
+                    <li>
+                        {{ line }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
