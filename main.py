@@ -10,18 +10,14 @@ def home():
     return render_template("manual.html")
 
 
-@app.route("/getPOS", methods=['POST'])
+@app.route("/getPOS", methods=['GET'])
 def getPOS():
-    if request.method == 'GET':
-        return render_template("manual.html")
     input_json = request.json or request.args
     return services.getPOS(input_json)
 
 
-@app.route("/getSimilarity", methods=['POST'])
+@app.route("/getSimilarity", methods=['GET'])
 def getSimilarity():
-    if request.method == 'GET':
-        return render_template("manual.html")
     input_json = request.json or request.args
     pprint(input_json)
     return services.getSimilarity(input_json)

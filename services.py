@@ -4,20 +4,6 @@ from pprint import pprint
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
-# Tags collected from https://www.geeksforgeeks.org/python-part-of-speech-tagging-using-textblob/
-BLOB_POS_MAPPING = {
-    'verb': ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ'],
-    'noun': ['NN', 'NNS', 'NNP', 'NNPS'],
-    'adjective': ['JJ', 'JJR', 'JJS'],
-    'pronoun': ['PRP', 'PRP$', 'WP', 'WP$'],
-    'adverb': ['RB', 'RBR', 'RBS', 'WRB'],
-    'preposition': ['IN', 'TO'],
-    'conjunction': ['CC'],
-    'interjection': ['UH'],
-    'determiner': ['DT', 'WDT', 'PDT'],
-    'misc': ['CD', 'FW', 'POS', 'EX', 'LS', 'MD', 'RP']
-}
-
 # Tags collected from https://spacy.io/api/annotation#pos-tagging
 SPACY_POS_MAPPING = {
     'adjective': ['ADJ'],
