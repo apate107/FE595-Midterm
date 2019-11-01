@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 import services
-from pprint import pprint
 
 app = Flask(__name__)
 
@@ -19,7 +18,6 @@ def getPOS():
 @app.route("/getSimilarity", methods=['GET'])
 def getSimilarity():
     input_json = request.json or request.args
-    pprint(input_json)
     return services.getSimilarity(input_json)
 
 

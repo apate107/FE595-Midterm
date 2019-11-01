@@ -1,7 +1,6 @@
 from flask import abort, jsonify
-from pprint import pprint
-
 import spacy
+
 nlp = spacy.load("en_core_web_sm")
 
 # Tags collected from https://spacy.io/api/annotation#pos-tagging
@@ -51,7 +50,6 @@ def getSimilarity(input_json):
     try:
         s1 = input_json['text1']
         s2 = input_json['text2']
-        pprint([s1, s2])
     except KeyError:
         abort(400, "Please provide a JSON with \'text1\' and \'text2\' to calculate the similarity of.")
     return jsonify(result=nlp(s1).similarity(nlp(s2)))
