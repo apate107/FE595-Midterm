@@ -7,18 +7,16 @@
 <body>
     <h1>Services</h1>
 
+    {% for service, doc in doc.items() %}
+    <h4>/{{ service }}</h4>
     <ul>
-        {% for service, doc in doc.items() %}
-            <li><b>{{ service }}</b>
-                <ul>
-                    {% for line in doc %}
-                    <li>
-                        {{ line }}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
+        {% for line in doc %}
+        <li>
+            {{ line }}
+        </li>
         {% endfor %}
     </ul>
+    <hr>
+    {% endfor %}
 </body>
 </html>
